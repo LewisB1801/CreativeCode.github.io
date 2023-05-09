@@ -96,22 +96,22 @@ a {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 5rem !important;
     font-weight: bold;
 }
 
 h2 {
-    font-size: 35px;
+    font-size: 3rem !important;
     font-weight: bold;
 }
 
 h3 {
-    font-size: 30px;
+    font-size: 2rem !important;
     font-weight: bold;
 }
 
 p {
-    font-size: 15px;
+    font-size: 1.2rem;
     line-height: 1.5;
 }
 
@@ -122,16 +122,17 @@ p {
     background-color: var(--background-color);
     padding: 50px;
     height: 80px;
-    width: 100vw;
+    width: 100%;
     font-family: 'Fira Code', monospace;
 }
 
 .navbar-brand {
-    font-family: 'Cherry Cream Soda', cursive;
+    font-family: 'Fira Code', monospace;
 }
 
 .navbar-brand span {
-    font-family: 'Fira Code', monospace !important;
+    font-family: 'Cherry Cream Soda', cursive !important;
+    color: var(--primary-color);
 }
 
 .nav-link,
@@ -167,6 +168,78 @@ ion-icon {
     margin: 0 auto;
 }
 
+.login-nav {
+    position: absolute;
+    right: 20px;
+    float: right;
+}
+
+
+
+/* Hero*/
+
+.hero-section {
+    background: url(Assets/pexels-dave-tombi-7705878.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3); /* Change the opacity and color as desired */
+    z-index: 1; /* Make sure the overlay is behind the content */
+  }
+  
+  .hero-content {
+    text-align: center;
+    color: var(--text-color);
+    z-index: 1;
+  }
+  
+  .hero-content h1 {
+    margin-bottom: 30px;
+    overflow-y: hidden;
+  }
+  
+  .hero-content p {
+    margin-bottom: 50px;
+  }
+  
+  .hero-content button {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .hero-content button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-5px);
+  }
+
+  .hero-content h1 {
+    font-family: 'Fira Code', monospace;
+  }
+
+  .hero-content h1 span {
+    font-family: 'Cherry Cream Soda', cursive !important;
+    color: var(--primary-color);
+  }
+  
 
 
 
@@ -178,6 +251,7 @@ ion-icon {
     color: var(--background-color);
     padding: 50px;
     text-align: center;
+    height: auto;
 }
 
 .about-container {
@@ -188,6 +262,7 @@ ion-icon {
 .about h2 {
     margin-bottom: 20px;
     color: var(--primary-color);
+    overflow-y: hidden;
 }
 
 .about p {
@@ -222,6 +297,7 @@ ion-icon {
 .services-header h2 {
     margin-bottom: 20px;
     color: var(--primary-color);
+    overflow-y: hidden;
 }
 
 .services-header p {
@@ -231,6 +307,7 @@ ion-icon {
 }
 
 .services-buttons {
+    padding: 1rem;
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -239,8 +316,8 @@ ion-icon {
 .services-button {
     width: 400px;
     background-color: var(--primary-color);
-    padding: 40px;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 20px;
     text-align: center;
     transition: all 0.2s ease-in-out;
 }
@@ -271,9 +348,72 @@ ion-icon {
 
 
 
+/* Footer */
 
-
-
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .footer-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .footer-section {
+    flex-basis: calc(33.33% - 30px);
+    margin-bottom: 30px;
+  }
+  
+  .footer-section h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-section li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-section li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-legal {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-legal p {
+    margin-bottom: 20px;
+  }
+  
+  .footer-legal a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+  }
+  
+  .footer-legal a:hover {
+    text-decoration: underline;
+  }
+  
 
 
 
@@ -302,76 +442,23 @@ ion-icon {
         width: 100%;
         padding: 5px;
     }
+
+    .login-nav {
+        position: relative;
+        right: 0;
+        float: none;
+    }
+}
+
+/* Hero */
+
+@media only screen and (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem !important;
+    }
 }
 
 /* Services */
-
-.services {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    padding: 50px;
-}
-
-.services-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.services-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.services-header h2 {
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-.services-header p {
-    margin-bottom: 20px;
-    max-width: 800px;
-    color: var(--text-color);
-}
-
-.services-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-}
-
-.services-button {
-    width: 400px;
-    background-color: var(--primary-color);
-    padding: 40px;
-    border-radius: 10px;
-    text-align: center;
-    transition: all 0.2s ease-in-out;
-}
-
-.services-button:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-5px);
-}
-
-.services-button a {
-    color: var(--background-color);
-    text-decoration: none;
-}
-
-.services-button a:hover {
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-.services-button h3 {
-    margin-bottom: 20px;
-}
-
-.services-button p {
-    margin-bottom: 0;
-}
 
 @media only screen and (max-width: 768px) {
     .services-buttons {
@@ -395,3 +482,27 @@ ion-icon {
         font-size: 16px;
     }
 }
+
+/* Footer */
+
+@media (max-width: 767px) {
+    .footer-section {
+      flex-basis: 100%;
+    }
+    
+    .footer-legal {
+      flex-direction: column;
+    }
+    
+    .footer-legal a {
+      margin: 10px 0;
+    }
+  }
+  
+  /* For screens between 768px and 991px */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .footer-section {
+      flex-basis: calc(50% - 30px);
+    }
+  }
+  
